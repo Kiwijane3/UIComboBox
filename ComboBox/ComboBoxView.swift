@@ -31,6 +31,9 @@ import UIKit
 	@IBInspectable
 	public var popupCornerRadius: CGFloat = 8
 	
+	@IBInspectable
+	public var popupContainerView: UIView?
+	
 	public weak var dataSource: ComboBoxDataSource? = nil {
 		didSet {
 			dataSource?.installDataSource(inTableView: popup, forPopupOf: self)
@@ -170,7 +173,7 @@ import UIKit
 	
 	public func presentPopup() {
 		
-		guard let superview = superview, !isPresentingPopup else {
+		guard let containerView = popupContainerView ?? superview, !isPresentingPopup else {
 			return
 		}
 		
@@ -178,21 +181,21 @@ import UIKit
 		
 		popup.delegate = self
 		
-		if popup.superview != superview {
+		if popup.superview != containerView {
 			
 			if popup.superview != nil {
 				popup.removeFromSuperview()
 			}
 			
-			superview.addSubview(popup)
+			containerView.addSubview(popup)
 			
 			popup.translatesAutoresizingMaskIntoConstraints = false
 			popup.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
 			popup.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 			popup.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-			popup.bottomAnchor.constraint(lessThanOrEqualTo: superview.bottomAnchor).isActive = true
+			popup.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor).isActive = true
 			
-			superview.layoutIfNeeded()
+			containerView.layoutIfNeeded()
 			
 		}
 		
