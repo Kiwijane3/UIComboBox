@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ComboBoxView: UIView, UITableViewDelegate, UIGestureRecognizerDelegate {
+@objc public class ComboBoxView: UIView, UITableViewDelegate, UIGestureRecognizerDelegate {
 	
 	public enum CellContext {
 		case selection

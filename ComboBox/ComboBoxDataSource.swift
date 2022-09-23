@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol ComboBoxDataSource: UITableViewDelegate {
+@objc public protocol ComboBoxDataSource: UITableViewDelegate {
 	
 	typealias SelectionCellProvider<Item> = (ComboBoxView, Item?) -> UITableViewCell?
 	
