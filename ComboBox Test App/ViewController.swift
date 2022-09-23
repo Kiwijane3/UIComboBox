@@ -8,7 +8,7 @@
 import UIKit
 import ComboBox
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ComboBoxViewDelegate {
 
 	@IBOutlet weak var comboBox: ComboBoxView!
 	
@@ -44,17 +44,18 @@ class ViewController: UIViewController {
 		]
 		
 		comboBox.dataSource = dataSource
+		comboBox.delegate = self
 		
 	}
 
 	public func generateSelectionCell(_ comboBox: ComboBoxView, forItem item: String?) -> UITableViewCell? {
 		
 		if let item = item {
-			let cell = comboBox.dequeueSelectionCell(withIdentifier: selectionCellIdentifier) as! SelectionCell
+			let cell = comboBox.dequeueReusableCell(withIdentifier: selectionCellIdentifier) as! SelectionCell
 			cell.content.text = item
 			return cell
 		} else {
-			return comboBox.dequeueSelectionCell(withIdentifier: placeholderCellIdentifier)
+			return comboBox.dequeueReusableCell(withIdentifier: placeholderCellIdentifier)
 		}
 		
 	}
@@ -77,6 +78,26 @@ class ViewController: UIViewController {
 		
 		return cell
 		
+	}
+	
+	public func comboBoxViewDidChangeSelection() {
+		print("ComboBox updated selection, is now: \(dataSource?.selectedItem ?? "nil")")
+	}
+	
+	public func comboBoxView(_ comboBox: ComboBoxView, willShowPopup: UIView) {
+		print("Will show popup")
+	}
+	
+	public func comboBoxView(_ comboBox: ComboBoxView, didShowPopup: UIView) {
+		print("Did show popup")
+	}
+	
+	public func comboBoxView(_ comboBox: ComboBoxView, willDismissPopup: UIView) {
+		print("Will dismiss popup")
+	}
+	
+	public func comboBoxView(_ comboBox: ComboBoxView, didDismissPopup: UIView) {
+		print("Did dismiss popup")
 	}
 
 }

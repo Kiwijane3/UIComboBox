@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="2336" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,27 +10,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceholderCell" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-nz-dOW">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gP3-nz-dOW" id="ryG-1l-JwK">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceholderCell" id="pLm-bN-WjE">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLm-bN-WjE" id="o1R-Gq-7SP">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Entry..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgO-Ef-sog">
-                        <rect key="frame" x="16" y="12" width="128" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an Entry..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAF-hP-3sy">
+                        <rect key="frame" x="20" y="12" width="127.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="BgO-Ef-sog" secondAttribute="bottom" constant="11" id="D5c-DQ-hVE"/>
-                    <constraint firstItem="BgO-Ef-sog" firstAttribute="top" secondItem="ryG-1l-JwK" secondAttribute="top" constant="12" id="TWN-ab-nEp"/>
-                    <constraint firstItem="BgO-Ef-sog" firstAttribute="leading" secondItem="ryG-1l-JwK" secondAttribute="leading" constant="16" id="e14-wN-LE1"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BgO-Ef-sog" secondAttribute="trailing" constant="20" symbolic="YES" id="lnM-DQ-fHX"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kAF-hP-3sy" secondAttribute="trailing" constant="20" symbolic="YES" id="Oxz-nJ-npZ"/>
+                    <constraint firstItem="kAF-hP-3sy" firstAttribute="top" secondItem="o1R-Gq-7SP" secondAttribute="top" constant="12" id="TyG-I5-wzj"/>
+                    <constraint firstItem="kAF-hP-3sy" firstAttribute="leading" secondItem="o1R-Gq-7SP" secondAttribute="leading" constant="20" symbolic="YES" id="sSz-qw-guO"/>
+                    <constraint firstAttribute="bottom" secondItem="kAF-hP-3sy" secondAttribute="bottom" constant="11" id="zjX-wS-SoP"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="47.826086956521742" y="148.66071428571428"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="95.652173913043484" y="-262.5"/>
         </tableViewCell>
     </objects>
     <resources>

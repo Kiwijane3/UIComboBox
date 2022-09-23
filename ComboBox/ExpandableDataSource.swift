@@ -58,20 +58,18 @@ public class ExpandableComboBoxDataSource<GroupIdentifier: Hashable, Item: Hasha
 	
 	private var popupDataSource: TableViewDiffableDataSource<DropDownSection<GroupIdentifier, Item>, DropDownItem<GroupIdentifier, Item>>?
 	
-	public typealias SelectionCellProvider = (ComboBoxView, Item?) -> UITableViewCell?
-	
 	public typealias GroupHeaderCellProvider = (UITableView, IndexPath, GroupIdentifier, Bool) -> UITableViewCell?
 	
 	public typealias ItemCellProvider = (UITableView, IndexPath, Item, GroupIdentifier?) -> UITableViewCell?
 	
-	private let selectionCellProvider: SelectionCellProvider
+	private let selectionCellProvider: SelectionCellProvider<Item>
 	
 	private let groupHeaderCellProvider: GroupHeaderCellProvider
 	
 	private let itemCellProvider: ItemCellProvider
 	
 	public init(
-		 selectionCellProvider: @escaping SelectionCellProvider,
+		 selectionCellProvider: @escaping SelectionCellProvider<Item>,
 		 groupHeaderCellProvider: @escaping GroupHeaderCellProvider,
 		 itemCellProvider: @escaping ItemCellProvider) {
 		

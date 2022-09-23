@@ -36,6 +36,8 @@
 		D7C8E68128D7D3E100E9F8C2 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C8E68028D7D3E100E9F8C2 /* PlaceholderView.xib */; };
 		D7C8E68528D7DBF000E9F8C2 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7C8E68428D7DBF000E9F8C2 /* SelectionCell.xib */; };
 		D7C8E68728D7DCCC00E9F8C2 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8E68628D7DCCC00E9F8C2 /* SelectionCell.swift */; };
+		D7CFE9D628DD080700F4A19B /* ComboBoxViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFE9D528DD080700F4A19B /* ComboBoxViewDelegate.swift */; };
+		D7CFE9DA28DD213700F4A19B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFE9D928DD213700F4A19B /* ReusableCell.swift */; };
 		D7FB209228D7E1F900462D1D /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB209128D7E1F900462D1D /* DropDownCell.xib */; };
 		D7FB209428D7E20600462D1D /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB209328D7E20600462D1D /* DropDownCell.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		D7C8E68028D7D3E100E9F8C2 /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		D7C8E68428D7DBF000E9F8C2 /* SelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
 		D7C8E68628D7DCCC00E9F8C2 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		D7CFE9D528DD080700F4A19B /* ComboBoxViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBoxViewDelegate.swift; sourceTree = "<group>"; };
+		D7CFE9D928DD213700F4A19B /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		D7FB209128D7E1F900462D1D /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
 		D7FB209328D7E20600462D1D /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		DEF7E96699F42E5A83F5F1BD /* Pods-ComboBox Test App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComboBox Test App.release.xcconfig"; path = "Target Support Files/Pods-ComboBox Test App/Pods-ComboBox Test App.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				D7C8E66428D4369E00E9F8C2 /* Single.swift */,
 				D76C85F628DABE46009DB3C9 /* Assets.xcassets */,
 				D72C6F0F28DAC5C300C3B023 /* View.xib */,
+				D7CFE9D528DD080700F4A19B /* ComboBoxViewDelegate.swift */,
+				D7CFE9D928DD213700F4A19B /* ReusableCell.swift */,
 			);
 			path = ComboBox;
 			sourceTree = "<group>";
@@ -445,12 +451,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CFE9DA28DD213700F4A19B /* ReusableCell.swift in Sources */,
 				D7C8E66128D42EFD00E9F8C2 /* ComboBoxPopupView.swift in Sources */,
 				D7C8E66528D4369E00E9F8C2 /* Single.swift in Sources */,
 				D7C8E65F28D42ECC00E9F8C2 /* ComboBoxView.swift in Sources */,
 				D7C8E65D28D42BB400E9F8C2 /* ComboBoxDataSource.swift in Sources */,
 				D73F133028D285EB00CF12B1 /* NestedList.swift in Sources */,
 				D73F131A28D285B700CF12B1 /* NestedDropDown.docc in Sources */,
+				D7CFE9D628DD080700F4A19B /* ComboBoxViewDelegate.swift in Sources */,
 				D73F133428D291A900CF12B1 /* ExpandableDataSource.swift in Sources */,
 				D7C8E66328D435C400E9F8C2 /* LinearComboBoxDataSource.swift in Sources */,
 			);
