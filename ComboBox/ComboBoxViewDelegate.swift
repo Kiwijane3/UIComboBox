@@ -22,7 +22,7 @@ public protocol ComboBoxViewDelegate {
 	
 }
 
-extension ComboBoxViewDelegate {
+public extension ComboBoxViewDelegate {
 	
 	func comboBoxView(_ comboBox: ComboBoxView, willShowPopup: UIView) {}
 	
