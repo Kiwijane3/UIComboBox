@@ -184,11 +184,11 @@ public class ExpandableComboBoxDataSource<GroupIdentifier: Hashable, Item: Hasha
 				toggleExpansion(forGroup: groupId, isExpanded: expanded)
 				comboBox.resizePopup()
 			case .item(let item, _):
-				comboBox.dismissPopup()
-				
 				if item != selectedItem {
 					selectedItem = item
 					comboBox.selectionDidChange()
+				} else {
+					comboBox.dismissPopup()
 				}
 		}
 		

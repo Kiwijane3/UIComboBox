@@ -16,11 +16,14 @@ import UIKit
 	
 	private var nibMap: [String: UINib] = [:]
 	
-	private lazy var popup = ComboBoxPopupView()
+	private var popup = ComboBoxPopupView()
+	
+	private var popupCollapsedConstraint: NSLayoutConstraint!
 	
 	private var recycler: [String: UITableViewCell] = [:]
 	
 	public var delegate: ComboBoxViewDelegate?
+	
 	
 	@IBInspectable
 	public var popupBackgroundColor: UIColor?
@@ -65,7 +68,11 @@ import UIKit
 	
 	public func configure() {
 		
+		popupCollapsedConstraint = popup.heightAnchor.constraint(equalToConstant: 0)
+		popupCollapsedConstraint.isActive = true
+		
 		dismissGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(dismissPopup))
+		dismissGestureRecogniser.cancelsTouchesInView = false
 		dismissGestureRecogniser.delegate = self
 		
 		addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
@@ -123,22 +130,21 @@ import UIKit
 			newView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 			newView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 			
-			layoutIfNeeded()
-			
 		}
 		
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.5) {
 			newView?.layer.opacity = 1
 			self.currentSelectionCell?.layer.opacity = 0
-		} completion: { [weak self] _ in
-			guard let self = self else { return }
+		} completion: { [weak self] completed in
+			guard completed, let self = self else { return }
 				
 			self.currentSelectionCell?.removeFromSuperview()
 			self.recycle(self.currentSelectionCell)
 			self.currentSelectionCell = newView
 		}
 		
-		dismissPopup()
+	
+		self.dismissPopup()
 		
 	}
 	
@@ -177,6 +183,8 @@ import UIKit
 			return
 		}
 		
+		delegate?.comboBoxView(self, willShowPopup: popup)
+		
 		isPresentingPopup = true
 		
 		popup.delegate = self
@@ -205,16 +213,13 @@ import UIKit
 		popup.layer.cornerRadius = popupCornerRadius
 		popup.clipsToBounds = true
 		
-		let initialFrame = popup.frame
-		popup.frame = CGRect(origin: initialFrame.origin, size: CGSize(width: initialFrame.width, height: 0))
+		popupCollapsedConstraint.isActive = false
 		
-		delegate?.comboBoxView(self, willShowPopup: popup)
-		
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.3) {
 			self.popup.layer.opacity = 1
-			self.popup.frame = initialFrame
+			containerView.layoutIfNeeded()
 		} completion: { [weak self] completed in
-			guard let self = self else {
+			guard completed, let self = self else {
 				return
 			}
 			
@@ -237,7 +242,7 @@ import UIKit
 		
 		popup.frame = CGRect(origin: frame.origin, size: .init(width: frame.width, height: initialHeight))
 		
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.3) {
 			self.popup.frame = CGRect(origin: self.frame.origin, size: .init(width: self.frame.width, height: targetHeight))
 		}
 	}
@@ -249,10 +254,13 @@ import UIKit
 		
 		delegate?.comboBoxView(self, willDismissPopup: popup)
 		
-		UIView.animate(withDuration: 0.2) {
+		popupCollapsedConstraint.isActive = true
+		
+		UIView.animate(withDuration: 0.3) {
 			self.popup.layer.opacity = 0
+			self.popup.superview?.layoutIfNeeded()
 		} completion: { [weak self] completed in
-			guard let self = self else {
+			guard completed, let self = self else {
 				return
 			}
 			
