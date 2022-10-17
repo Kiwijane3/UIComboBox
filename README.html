@@ -1,0 +1,40 @@
+<h1>UIComboBox</h1>
+<p>UIComboBox provides a basic drop-down selection control for iOS, similar to a <code>Spinner</code> for Android. The design of the code prioritises flexibility.</p>
+<h2>Adding as a dependency</h2>
+<p>UIComboBox is available via Swift Package Manager and CocoaPods.</p>
+<p>To add it as a Swift Package Manager dependency:</p>
+<p><code>dependencies: [
+    .package(url: "https://github.com/Kiwijane3/UIComboBox.git", .upToNextMinor(from: "0.1.0"))
+]</code></p>
+<p>To add it as a CocoaPods dependency:</p>
+<p><code>pod 'UIComboBox', '~&gt; 0.1.0'</code></p>
+<h2>Getting Started</h2>
+<p>Once you have added the dependency, add a <code>ComboBoxView</code> to your view layout and need to define a data source to populate it. Similarly to <code>UITableViewCell</code>, <code>ComboBoxView</code> uses <code>UITableViewCell</code>s to display both the currently selected element and available elements in the dropdown. Define cells using your preferred method (XIB or Class), and then register them with the combo box using the appropriate context; Use <code>.selection</code> for cells that will show the currently selected item in the combo box itself, or <code>.dropdown</code> for cells that will display available items in the dropdown. For instance:</p>
+<p>```
+public class MyViewController: UIViewController {</p>
+<pre><code>weak var comboBox: ComboBoxView!
+
+public func viewDidLoad() {
+    comboBox.register(UINib(nibName: "SelectionCell", bundle: nil), forCellWithReuseIdentifier: "selection", inContext: .selection)
+    comboBox.register(MyDropDownCell.Self, forCellWithReuseIdentifier: "dropdown", inContext: .dropdown)
+}
+</code></pre>
+<p>}
+```</p>
+<p>Then, define functions to generate cells for each of these contexts, like so:</p>
+<p>```</p>
+<p>public func generateSelectionCell(_ comboBox: ComboBoxView, forItem item: String?) -&gt; UITableViewCell {
+    if let item = item {
+        let cell = comboBox.dequeueReusableCell(withIdentifier: "selection") as! SelectionCell
+        cell.content.text = item
+        return cell
+    } else {
+        return comboBox.dequeueReusableCell(withIdentifier: placeholderCellIdentifier)!
+    }
+}</p>
+<p>public func generateItemCell(_ tableView: UITableView, atIndex index: IndexPath, forItem item: String) -&gt; UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: index) as! ItemCell
+    cell.content.text = item
+    return cell
+}</p>
+<p>```</p>

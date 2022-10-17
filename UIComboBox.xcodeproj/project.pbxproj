@@ -11,6 +11,7 @@
 		D71DD4ED28DA7A680093BB19 /* GroupHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71DD4EC28DA7A680093BB19 /* GroupHeaderCell.xib */; };
 		D71DD4EF28DA7AF40093BB19 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71DD4EE28DA7AF40093BB19 /* ItemCell.swift */; };
 		D71DD4F128DA7B430093BB19 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71DD4F028DA7B430093BB19 /* ItemCell.xib */; };
+		D733314828FCF1F80049BABC /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733314728FCF1F80049BABC /* Package.swift */; };
 		D73F131A28D285B700CF12B1 /* UIComboBox.docc in Sources */ = {isa = PBXBuildFile; fileRef = D73F131928D285B700CF12B1 /* UIComboBox.docc */; };
 		D73F132028D285B800CF12B1 /* UIComboBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73F131528D285B700CF12B1 /* UIComboBox.framework */; };
 		D73F132528D285B800CF12B1 /* NestedDropDownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73F132428D285B800CF12B1 /* NestedDropDownTests.swift */; };
@@ -84,6 +85,7 @@
 		D71DD4EC28DA7A680093BB19 /* GroupHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupHeaderCell.xib; sourceTree = "<group>"; };
 		D71DD4EE28DA7AF40093BB19 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D71DD4F028DA7B430093BB19 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		D733314728FCF1F80049BABC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		D73F131528D285B700CF12B1 /* UIComboBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComboBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73F131828D285B700CF12B1 /* UIComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComboBox.h; sourceTree = "<group>"; };
 		D73F131928D285B700CF12B1 /* UIComboBox.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComboBox.docc; sourceTree = "<group>"; };
@@ -159,12 +161,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D73F130B28D285B700CF12B1 = {
+		D733314928FCF3D00049BABC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				D73F131728D285B700CF12B1 /* ComboBox */,
 				D73F132328D285B800CF12B1 /* ComboBoxTests */,
 				D7C8E66B28D7CA1D00E9F8C2 /* ComboBox Test App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D73F130B28D285B700CF12B1 = {
+			isa = PBXGroup;
+			children = (
+				D733314928FCF3D00049BABC /* Sources */,
+				D733314728FCF1F80049BABC /* Package.swift */,
 				D73F131628D285B700CF12B1 /* Products */,
 				3CA0AA5BBCCD05C3418EAC89 /* Frameworks */,
 			);
@@ -416,6 +427,7 @@
 				D73F191D28E24B2F001D2A24 /* ExpandableComboBoxDataSource.swift in Sources */,
 				D73F131A28D285B700CF12B1 /* UIComboBox.docc in Sources */,
 				D7B987BC28FCAA070044F547 /* AdaptiveLinearComboBoxDataSource.swift in Sources */,
+				D733314828FCF1F80049BABC /* Package.swift in Sources */,
 				D7B987BE28FCB5C90044F547 /* LinearComboBoxDataSource.swift in Sources */,
 				D7CFE9D628DD080700F4A19B /* ComboBoxViewDelegate.swift in Sources */,
 				D73F133428D291A900CF12B1 /* DiffableExpandableDataSource.swift in Sources */,
