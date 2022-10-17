@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import ComboBox
+import UIComboBox
 
 public class SelectionCell: UITableViewCell {
 	

@@ -10,6 +10,14 @@ import UIKit
 
 internal class ComboBoxPopupView: UITableView, UIGestureRecognizerDelegate {
 	
+	weak var comboBox: ComboBoxView?
+	
+	override var contentSize: CGSize {
+		didSet {
+			invalidateIntrinsicContentSize()
+		}
+	}
+	
 	override var intrinsicContentSize: CGSize {
 		get {
 			return .init(width: UIView.noIntrinsicMetric, height: contentSize.height)

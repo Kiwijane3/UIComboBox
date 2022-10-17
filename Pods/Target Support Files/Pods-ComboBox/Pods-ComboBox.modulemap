@@ -1,6 +1,0 @@
-module Pods_ComboBox {
-  umbrella header "Pods-ComboBox-umbrella.h"
-
-  export *
-  module * { export * }
-}

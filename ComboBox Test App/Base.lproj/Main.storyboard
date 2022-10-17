@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="swX-h1-3ME">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,48 +9,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Linear-->
+        <scene sceneID="ciQ-0s-03j">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ComboBox_Test_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController title="Linear" id="3XE-w3-49X" customClass="LinearComboBoxTestController" customModule="UIComboBox_Test_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HMd-hE-VP3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="der-dk-8Ze" customClass="ComboBoxView" customModule="ComboBox">
-                                <rect key="frame" x="107" y="431" width="200" height="44"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Zz-cb-7Q5" customClass="ComboBoxView" customModule="UIComboBox">
+                                <rect key="frame" x="87" y="412.5" width="240" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="popupBackgroundColor">
-                                        <color key="value" systemColor="systemGray5Color"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="indicatorImage" value="arrowtriangle.down.circle"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="PfG-Hq-vtS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="der-dk-8Ze" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PBk-7l-dcU"/>
-                            <constraint firstItem="der-dk-8Ze" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="u3b-8e-SGa"/>
+                            <constraint firstItem="9Zz-cb-7Q5" firstAttribute="centerX" secondItem="PfG-Hq-vtS" secondAttribute="centerX" id="fb3-rk-SqE"/>
+                            <constraint firstItem="9Zz-cb-7Q5" firstAttribute="centerY" secondItem="PfG-Hq-vtS" secondAttribute="centerY" id="ylj-PW-sq9"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Linear" id="92L-oS-P8E"/>
                     <connections>
-                        <outlet property="comboBox" destination="der-dk-8Ze" id="xOr-j5-4ZI"/>
+                        <outlet property="comboBox" destination="9Zz-cb-7Q5" id="Whg-XA-etZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ji1-hb-t0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="110"/>
+            <point key="canvasLocation" x="731.8840579710145" y="231.69642857142856"/>
+        </scene>
+        <!--Expandable-->
+        <scene sceneID="eM8-1w-obt">
+            <objects>
+                <viewController title="Expandable" id="13r-cm-5by" customClass="ExpandableComboBoxTestController" customModule="UIComboBox_Test_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NME-LF-5hk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="32" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-zq-aZl" customClass="ComboBoxView" customModule="UIComboBox">
+                                <rect key="frame" x="87" y="412.5" width="240" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QVe-93-V9V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fcd-zq-aZl" firstAttribute="centerY" secondItem="QVe-93-V9V" secondAttribute="centerY" id="kH5-Gx-uT9"/>
+                            <constraint firstItem="fcd-zq-aZl" firstAttribute="centerX" secondItem="QVe-93-V9V" secondAttribute="centerX" id="zdH-X3-0Jt"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Expandable" id="4IJ-cH-fVQ"/>
+                    <connections>
+                        <outlet property="comboBox" destination="fcd-zq-aZl" id="zFS-Ng-DNi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTj-sf-oY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="-405"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PWB-Vs-12c">
+            <objects>
+                <tabBarController id="swX-h1-3ME" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VGn-C1-BUj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="13r-cm-5by" kind="relationship" relationship="viewControllers" id="edW-y0-nTc"/>
+                        <segue destination="3XE-w3-49X" kind="relationship" relationship="viewControllers" id="pWU-FL-i7G"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gc-G5-vbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159" y="-101"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.down.circle" width="11" height="11"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
