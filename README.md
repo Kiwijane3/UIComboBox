@@ -10,14 +10,18 @@ To add it as a Swift Package Manager dependency:
 
 ```swift
 dependencies: [
+	//...
 	.package(url: "https://github.com/Kiwijane3/UIComboBox.git", .upToNextMinor(from: "0.1.0"))
+	//...
 ]
 ```
 
 To add it as a CocoaPods dependency:
 
 ```ruby
-  pod 'UIComboBox', '~> 0.1.0'
+	//...
+	pod 'UIComboBox', '~> 0.1.0'
+	//...
 ```
 
 ## Getting Started
@@ -26,12 +30,17 @@ Once you have added the dependency, add a `ComboBoxView` to your view layout and
 
 ```swift
 public class MyViewController: UIViewController {
+	//...
     weak var comboBox: ComboBoxView!
+	//...
     public func viewDidLoad() {
+		//...
 		comboBox.register(UINib(nibName: "PlaceholderCell", bundle: nil), forCellWithReuseIdentifier: "placeholder", inContext: .selection)
         comboBox.register(UINib(nibName: "SelectionCell", bundle: nil), forCellWithReuseIdentifier: "selection", inContext: .selection)
         comboBox.register(MyDropDownCell.Self, forCellWithReuseIdentifier: "dropdown", inContext: .dropdown)
-    }
+    	//...
+	}
+	//...
 }
 ```
 
@@ -59,12 +68,14 @@ Then, create a data source that uses the functions to generate cells and add it 
 
 ```swift
 public func viewDidLoad() {
+	//...
 	dataSource = AdaptiveLinearComboBoxDataSource(
 				selectionCellProvider: self.generateSelectionCell(_:forItem:),
 				popupCellProvider: self.generateItemCell(_:atIndex:forItem:)
 			)
 	comboBox.dataSource = dataSource 
 	dataSource.contents = ["Alpha", "Beta", "Gamma", "Kappa", "Epsilon", "Omega"]
+	//...
 }
 ```
 
@@ -100,7 +111,7 @@ Then, create an expandable data source using these functions and populate its co
 
 ```swift
 override func viewDidLoad() {
-	..
+	//...
 	dataSource = AdaptiveExpandableComboBoxDataSource(
 				selectionCellProvider: self.generateSelectionCell(_:forItem:),
 				groupHeaderCellProvider: self.generateGroupHeaderCell(_:atIndex:forGroupWithId:isExpanded:),
@@ -115,5 +126,6 @@ override func viewDidLoad() {
 	]
 	comboBox.dataSource = dataSource
 	comboBox.delegate = self
+	//...
 }
 ```
